@@ -189,3 +189,14 @@ if all three are provided prority is
 Remember all these variables should be in applications.yml and should be overridded
 
 ![Alt text](assets/MultipleWaysToProvideExternalVariable.png)
+
+I am adding config server now so had to remove application_qa.yml and application_prod.yaml 
+please refer to this repository for the same code https://github.com/eazybytes/microservices/tree/main/section6/v1-springboot
+
+## To run rabbit mq
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+https://www.rabbitmq.com/download.html
+
+## To create webhooks
+https://hookdeck.com/ for documentation
+https://console.hookdeck.com/ to create webhook
