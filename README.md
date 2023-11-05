@@ -173,3 +173,19 @@ Learn how to create enterprise and production ready Microservices with Spring, S
 | "helm uninstall [NAME]" | Uninstall all of the resources associated with a given release |
 | "helm template [NAME] [CHART]" | Render chart templates locally along with the values |
 | "helm list" | Lists all of the helm releases inside a K8s cluster |
+
+
+## My Notes
+
+External variables can be provided in multiple ways.
+
+Please refer the below image for syntax
+
+if all three are provided prority is
+1. Command line arguements i.e (--build.version)
+2. JVM args i.e (-Dbuild.version)
+3. Environment Variables i.e (BUILD_VERSION)
+
+Remember all these variables should be in applications.yml and should be overridded
+
+![Alt text](assets/MultipleWaysToProvideExternalVariable.png)
