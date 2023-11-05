@@ -200,3 +200,8 @@ https://www.rabbitmq.com/download.html
 ## To create webhooks
 https://hookdeck.com/ for documentation
 https://console.hookdeck.com/ to create webhook
+
+## To check liveness and readiness healthpoints
+http://localhost:8071/actuator/health
+http://localhost:8071/actuator/health/liveness
+http://localhost:8071/actuator/health/readiness
