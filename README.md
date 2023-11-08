@@ -205,3 +205,8 @@ https://console.hookdeck.com/ to create webhook
 H2 Db console :- http://localhost:8080/h2-console
 Swagger ui :- http://localhost:8080/swagger-ui/index.html
 
+
+## To check liveness and readiness healthpoints
+http://localhost:8071/actuator/health
+http://localhost:8071/actuator/health/liveness
+http://localhost:8071/actuator/health/readiness
