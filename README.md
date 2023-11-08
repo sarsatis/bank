@@ -200,3 +200,8 @@ https://www.rabbitmq.com/download.html
 ## To create webhooks
 https://hookdeck.com/ for documentation
 https://console.hookdeck.com/ to create webhook
+
+## Useful links
+H2 Db console :- http://localhost:8080/h2-console
+Swagger ui :- http://localhost:8080/swagger-ui/index.html
+
