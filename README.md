@@ -200,10 +200,14 @@ https://www.rabbitmq.com/download.html
 ## To create webhooks
 https://hookdeck.com/ for documentation
 https://console.hookdeck.com/ to create webhook
+this should be setup using /monitor api which is in config server
 
 ## Useful links
 H2 Db console :- http://localhost:8080/h2-console
 Swagger ui :- http://localhost:8080/swagger-ui/index.html
+Eureka for all apps :- http://localhost:8070/eureka/apps (To get the response in json send Accept :- application/json)
+Eureka for individual apps :- http://localhost:8070/eureka/apps/loans (To get the response in json send Accept :- application/json)
+
 
 
 ## To check liveness and readiness healthpoints

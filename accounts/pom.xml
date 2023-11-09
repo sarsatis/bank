@@ -66,6 +66,14 @@
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -92,7 +100,7 @@
 				<version>3.3.2</version>
 				<configuration>
 					<to>
-						<image>sarthaksatish/${project.artifactId}:s6</image>
+						<image>sarthaksatish/${project.artifactId}:s8</image>
 					</to>
 				</configuration>
 			</plugin>
