@@ -197,6 +197,9 @@ please refer to this repository for the same code https://github.com/eazybytes/m
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
 https://www.rabbitmq.com/download.html
 
+## To run redis
+docker run -p 6379:6379 --name eazyredis -d redis
+
 ## To create webhooks
 https://hookdeck.com/ for documentation
 https://console.hookdeck.com/ to create webhook
@@ -214,3 +217,9 @@ Eureka for individual apps :- http://localhost:8070/eureka/apps/loans (To get th
 http://localhost:8071/actuator/health
 http://localhost:8071/actuator/health/liveness
 http://localhost:8071/actuator/health/readiness
+
+## Gateway links
+http://192.168.1.189:8072/actuator/gateway/routes
+
+## Circuit Breaker links
+http://192.168.1.189:8072/actuator/circuitbreakers

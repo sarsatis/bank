@@ -31,12 +31,20 @@ management:
     web:
       exposure:
         include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
 
 
 ########### Eureka server related configurations Start ###########
   endpoint:
     shutdown:
       enabled: true
+    health:
+      probes:
+        enabled: true
   info:
     env:
       enabled: true
@@ -60,3 +68,9 @@ info:
     description: "Eazy Bank Loans Application"
     version: "1.0.0"
 ########### Eureka server related configurations End ###########
+
+logging:
+  level:
+    com:
+      sarthak:
+        loans: DEBUG
