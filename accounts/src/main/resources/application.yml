@@ -80,7 +80,11 @@ management:
   info:
     env:
       enabled: true
-
+#### Metrics related config for prometheus to capture data start ######
+  metrics:
+    tags:
+      application: ${spring.application.name}
+#### Metrics related config for prometheus to capture data end ######
 endpoints:
   shutdown:
     enabled: true
@@ -105,6 +109,11 @@ logging:
     com:
       sarthak:
         accounts: DEBUG
+########## Open telemetry Start #######################
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+########## Open telemetry End #######################
+
 
 ########### Eureka server related configurations End ###########
 

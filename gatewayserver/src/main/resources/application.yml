@@ -12,7 +12,7 @@ spring:
 ########## Circuit Breaker Global time out settings for all apis Start ############
       httpclient:
         connect-timeout: 1000
-        response-timeout: 2s
+        response-timeout: 10s
 
     data:
       redis:
@@ -33,6 +33,11 @@ management:
   info:
     env:
       enabled: true
+#### Metrics related config for prometheus to capture data start ######
+  metrics:
+    tags:
+      application: ${spring.application.name}
+#### Metrics related config for prometheus to capture data end ######
 
 info:
   app:
@@ -45,6 +50,10 @@ logging:
     com:
       sarthak:
         gatewayserver: DEBUG
+########## Open telemetry Start #######################
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+########## Open telemetry End #######################
 
 ########## Circuit Breaker Start ############
 resilience4j.circuitbreaker:

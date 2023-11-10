@@ -19,3 +19,14 @@ management:
     health:
       probes:
         enabled: true
+#### Metrics related config for prometheus to capture data start ######
+  metrics:
+    tags:
+      application: ${spring.application.name}
+#### Metrics related config for prometheus to capture data end ######
+
+########## Open telemetry Start #######################
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+########## Open telemetry End #######################

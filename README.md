@@ -223,3 +223,13 @@ http://192.168.1.189:8072/actuator/gateway/routes
 
 ## Circuit Breaker links
 http://192.168.1.189:8072/actuator/circuitbreakers
+
+## Prometheus
+http://localhost:8080/actuator/prometheus
+http://localhost:9090/targets
+
+## Grafana
+
+http://localhost:3000
+
+https://grafana.com/grafana/dashboards/4701-jvm-micrometer/ configured this dashboard in grafana
