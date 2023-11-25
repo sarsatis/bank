@@ -194,7 +194,7 @@ I am adding config server now so had to remove application_qa.yml and applicatio
 please refer to this repository for the same code https://github.com/eazybytes/microservices/tree/main/section6/v1-springboot
 
 ## To run rabbit mq
-docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+docker run -d -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
 https://www.rabbitmq.com/download.html
 
 ## To run redis
@@ -233,3 +233,12 @@ http://localhost:9090/targets
 http://localhost:3000
 
 https://grafana.com/grafana/dashboards/4701-jvm-micrometer/ configured this dashboard in grafana
+
+## keycloak
+
+docker run -d -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:22.0.1 start-dev
+
+## Application start sequence
+
+Make sure all rabbitmq,keyclock is started
+configserver --> eureka server --> all other ms --> gateway server
