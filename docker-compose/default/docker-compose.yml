@@ -240,7 +240,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "sarthaksatish/configserver:s12"
+    image: "sarthaksatish/configserver:s14"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -260,7 +260,7 @@ services:
       OTEL_SERVICE_NAME: "configserver"
 
   eurekaserver:
-    image: "sarthaksatish/eurekaserver:s12"
+    image: "sarthaksatish/eurekaserver:s14"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -278,7 +278,7 @@ services:
       OTEL_SERVICE_NAME: "eurekaserver"
 
   accounts:
-    image: "sarthaksatish/accounts:s12"
+    image: "sarthaksatish/accounts:s14"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -299,7 +299,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "sarthaksatish/loans:s12"
+    image: "sarthaksatish/loans:s14"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -317,7 +317,7 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "sarthaksatish/cards:s12"
+    image: "sarthaksatish/cards:s14"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -335,7 +335,7 @@ services:
       service: microservice-eureka-config
 
   message:
-    image: "eazybytes/message:s13"
+    image: "sarthaksatish/message:s13"
     container_name: message-ms
     depends_on:
       rabbit:
@@ -347,7 +347,7 @@ services:
       service: network-deploy-service
       
   gatewayserver:
-    image: "sarthaksatish/gatewayserver:s12"
+    image: "sarthaksatish/gatewayserver:s14"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"

@@ -246,6 +246,8 @@ configserver --> eureka server --> all other ms --> gateway server
 ## k8s dashboard config
 https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 
+run kubectl proxy and access http://localhost:8001
+
 ## Setting up helm 
 
 ### Step1 Installing keycloak
@@ -263,14 +265,19 @@ username: user
 password: password
 
 http://localhost:80
+
+get the access token and update in postman and remember to change port
 ```
 
 
 ### Step2 Installing kafka
+```t
 helm dependency build kafka
 helm install kafka kafka
+```
 
 ### Step3 Installing prometheus
+```t
 helm dependency build kube-prometheus
 helm install prometheus kube-prometheus
 
@@ -278,3 +285,42 @@ echo "Prometheus URL: http://127.0.0.1:9090/"
     kubectl port-forward --namespace default svc/prometheus-kube-prometheus-prometheus 9090:9090
 
 http://localhost:9090
+
+Note:- Configured microservices details in values.yaml under additionalScrapeConfigs
+```
+### Step4 Installing Grafana components
+```t
+
+1st setup grafana loki (log aggregator)
+
+helm dependency build grafana-loki
+helm install loki grafana-loki/
+
+2nd setup grafana tempo
+
+helm dependency build grafana-tempo
+helm install tempo grafana-tempo
+
+3rd setup grafana
+Note:- Configured Prometheus loki and tempo  details in values.yaml under secretDefinition
+
+helm dependency build grafana/
+helm install grafana grafana/
+
+echo "Browse to http://127.0.0.1:8080"
+kubectl port-forward svc/grafana 3000:3000
+
+
+echo "User: admin"
+    echo "Password: $(kubectl get secret grafana-admin --namespace default -o jsonpath="{.data.GF_SECURITY_ADMIN_PASSWORD}" | base64 -d)"
+```
+
+### Step5 Installing microservices
+```t
+helm dependency build environments/dev-env 
+helm install eazybank environments/dev-env 
+
+If you make any changes in common config you have to run helm dependency build to all microservices
+
+if you make any changes in microservices then you have to run helm dependency build in respective env folder
+```
