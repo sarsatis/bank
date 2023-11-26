@@ -323,7 +323,21 @@ echo "Password: $(kubectl get secret grafana-admin --namespace default -o jsonpa
 helm dependency build environments/dev-env 
 helm install eazybank environments/dev-env 
 
-If you make any changes in common config you have to run helm dependency build to all microservices
+If you make any changes in common config you have to run helm dependency build to all microservices and build environment
 
 if you make any changes in microservices then you have to run helm dependency build in respective env folder
 ```
+
+### Step6 Test
+
+Take the gateway server ip and test the functionality
+
+To test the config server changes in cloud 
+1. setup a webhook in hook deck
+2. hookdeck logout
+3. hookdeck login --cli-key 0yjr1v1apqf3ofytgvaxqef6vuaesa5kftvi5un7921k18k9ro
+4. hookdeck listen 8071 Source (use /monitor for api)
+5. I have enabled rabbit mq config in configserver
+6. k port-forward svc/configserver 8071:8071
+7. Now if you make changes on github it will automatically reflect
+
