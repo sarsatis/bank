@@ -249,6 +249,8 @@ https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 ## Setting up helm 
 
 ### Step1 Installing keycloak
+
+```t
 helm dependency build keycloak
 helm install keyclock keycloak
 
@@ -261,6 +263,8 @@ username: user
 password: password
 
 http://localhost:80
+```
+
 
 ### Step2 Installing kafka
 helm dependency build kafka
