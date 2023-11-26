@@ -242,3 +242,20 @@ docker run -d -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=ad
 
 Make sure all rabbitmq,keyclock is started
 configserver --> eureka server --> all other ms --> gateway server
+
+## k8s dashboard config
+https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+
+## Setting up helm 
+
+### Step1
+helm dependency build keycloak
+helm install keyclock keycloak
+
+Setup client and roles and assign these roles to client
+
+### Step2
+
+
+
+
