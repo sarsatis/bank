@@ -8,5 +8,5 @@ global:
   otelExporterEndPoint: http://tempo-grafana-tempo-distributor:4317
   otelMetricsExporter: none
   # kafkaBrokerURL: kafka-controller-0.kafka-controller-headless.default.svc.cluster.local:9092
-  rabbitmqHost: rabbitmq.default.svc.cluster.loca:5672
+  rabbitmqHost: rabbitmq.default.svc.cluster.local
   rabbitmqPassword: 0doGYqszLmEp7lSj

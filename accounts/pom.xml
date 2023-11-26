@@ -125,7 +125,7 @@
 				<version>3.3.2</version>
 				<configuration>
 					<to>
-						<image>sarthaksatish/${project.artifactId}:s12</image>
+						<image>sarthaksatish/${project.artifactId}:s15</image>
 					</to>
 				</configuration>
 			</plugin>

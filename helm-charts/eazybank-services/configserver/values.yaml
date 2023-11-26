@@ -26,3 +26,4 @@ eureka_enabled: false
 resouceserver_enabled: false
 otel_enabled: true
 kafka_enabled: false
+rabbitmq_enabled: true
