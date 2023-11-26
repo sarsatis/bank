@@ -272,6 +272,9 @@ get the access token and update in postman and remember to change port
 
 ### Step2 Installing kafka
 ```t
+I have used rabbitmq instead of kafka for messaging
+helm dependency build rabbitmq/
+
 helm dependency build kafka
 helm install kafka kafka
 ```
@@ -312,7 +315,7 @@ kubectl port-forward svc/grafana 3000:3000
 
 
 echo "User: admin"
-    echo "Password: $(kubectl get secret grafana-admin --namespace default -o jsonpath="{.data.GF_SECURITY_ADMIN_PASSWORD}" | base64 -d)"
+echo "Password: $(kubectl get secret grafana-admin --namespace default -o jsonpath="{.data.GF_SECURITY_ADMIN_PASSWORD}" | base64 -d)"
 ```
 
 ### Step5 Installing microservices

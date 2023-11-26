@@ -7,4 +7,6 @@ global:
   openTelemetryJavaAgent: "-javaagent:/app/libs/opentelemetry-javaagent-1.27.0.jar"
   otelExporterEndPoint: http://tempo-grafana-tempo-distributor:4317
   otelMetricsExporter: none
-  kafkaBrokerURL: kafka-controller-0.kafka-controller-headless.default.svc.cluster.local:9092
+  # kafkaBrokerURL: kafka-controller-0.kafka-controller-headless.default.svc.cluster.local:9092
+  rabbitmqHost: rabbitmq.default.svc.cluster.loca:5672
+  rabbitmqPassword: 0doGYqszLmEp7lSj

@@ -80,5 +80,17 @@ spec:
               name: {{ .Values.global.configMapName }}
               key: SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS
         {{- end }}
+        {{- if .Values.rabbitmq_enabled }}
+        - name: SPRING_RABBITMQ_HOST
+          valueFrom: 
+            configMapKeyRef:
+              name: {{ .Values.global.configMapName }}
+              key: SPRING_RABBITMQ_HOST
+        - name: SPRING_RABBITMQ_PASSWORD
+          valueFrom: 
+            configMapKeyRef:
+              name: {{ .Values.global.configMapName }}
+              key: SPRING_RABBITMQ_PASSWORD
+        {{- end }}
         
 {{- end -}}
