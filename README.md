@@ -248,14 +248,29 @@ https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 
 ## Setting up helm 
 
-### Step1
+### Step1 Installing keycloak
 helm dependency build keycloak
 helm install keyclock keycloak
 
 Setup client and roles and assign these roles to client
 
-### Step2
+Note:- Remember to delete pvc when deleting chart
 
 
+username: user
+password: password
 
+http://localhost:80
 
+### Step2 Installing kafka
+helm dependency build kafka
+helm install kafka kafka
+
+### Step3 Installing prometheus
+helm dependency build kube-prometheus
+helm install prometheus kube-prometheus
+
+echo "Prometheus URL: http://127.0.0.1:9090/"                                 
+    kubectl port-forward --namespace default svc/prometheus-kube-prometheus-prometheus 9090:9090
+
+http://localhost:9090
